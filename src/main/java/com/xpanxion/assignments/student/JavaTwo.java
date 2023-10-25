@@ -1,10 +1,9 @@
 package com.xpanxion.assignments.student;
 
-import java.util.Scanner;
-
 import com.xpanxion.assignments.shared.*;
-
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.HashMap;
 
 public class JavaTwo {
 
@@ -40,8 +39,29 @@ public class JavaTwo {
         }
     }
 
+    // person HashMap
     public void ex2() {
-        System.out.println("Student 1: ex2.");
+        HashMap<Integer, Person> personMap = new HashMap<>();
+        Person person1 = new Person(1, "Peter Jones");
+        Person person2 = new Person(2, "John Smith");
+        Person person3 = new Person(3, "Mary Jane");
+
+        personMap.put(person1.id, person1);
+        personMap.put(person2.id, person2);
+        personMap.put(person3.id, person3);
+
+        Scanner console = new Scanner(System.in);
+
+        while (true) {
+            System.out.print("Enter Person ID: ");
+            String userId = console.next();
+            if (userId.equals("done")) {
+                break;
+            }
+            // convert userID to int then get the value from map
+            int intUserId = Integer.parseInt(userId);
+            System.out.println(personMap.get(intUserId));
+        }
     }
 
     public void ex3() {
