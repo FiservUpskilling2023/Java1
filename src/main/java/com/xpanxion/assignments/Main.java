@@ -5,7 +5,7 @@ import com.xpanxion.assignments.student.JavaTwo;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        // JavaOne javaOne = new JavaOne();
+        JavaOne javaOne = new JavaOne();
         // javaOne.ex1();
         // javaOne.ex2();
         // javaOne.ex3();
@@ -19,9 +19,9 @@ public class Main {
 
         JavaTwo javaTwo = new JavaTwo();
         // javaTwo.ex1();
-//        javaTwo.ex2();
-        javaTwo.ex3();
-        javaTwo.ex4();
+        // javaTwo.ex2();
+        // javaTwo.ex3();
+        // javaTwo.ex4();
         javaTwo.ex5();
         javaTwo.ex6();
         javaTwo.ex7();

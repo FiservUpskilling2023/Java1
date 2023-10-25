@@ -2,15 +2,17 @@ package com.xpanxion.assignments.shared;
 
 import java.util.ArrayList;
 
-public class Invoice {
+// extend the parent
+public class Invoice extends Base {
     // has id member
     // has PRIVATE list of Products
     // method for addProudct(product obj)
-    public int id;
+    // public int id;
     private ArrayList<Product> products;
 
+    // use the superclass constructor id in the constructor for the child
     public Invoice(int id) {
-        this.id = id;
+        super(id);
         this.products = new ArrayList<>();
     }
 

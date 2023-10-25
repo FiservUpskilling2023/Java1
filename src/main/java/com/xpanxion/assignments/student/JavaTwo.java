@@ -77,12 +77,21 @@ public class JavaTwo {
 
     }
 
+    // Refactor Invoice and Products
     public void ex4() {
-        System.out.println("Student 1: ex4.");
+        var invoice = new Invoice(1);
+        invoice.addProduct(new Product(111, "Mustard", 2.00));
+        invoice.addProduct(new Product(222, "Ketchup", 3.00));
+        invoice.addProduct(new Product(333, "Franks Hot Sauce", 4.00));
+
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        System.out.println("Total cost: " + formatter.format(invoice.getTotalCost()));
     }
 
     public void ex5() {
-        System.out.println("Student 1: ex5.");
+        var repository = new Repository();
+        var p = repository.getPerson();
+        System.out.println(p);
     }
 
     public void ex6() {
