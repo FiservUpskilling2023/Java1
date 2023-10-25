@@ -95,7 +95,27 @@ public class JavaTwo {
     }
 
     public void ex6() {
-        System.out.println("Student 1: ex6.");
+        Scanner console = new Scanner(System.in);
+        Calculator calc = new Calculator();
+
+        while (true) {
+            // problem is we're terminating after asking about digit1
+            System.out.print("Enter the first number: ");
+            var digit1 = console.next();
+            if (digit1.equals("done")) {
+                calc.showStatements();
+                break;
+            }
+            System.out.print("Enter the second number: ");
+            int digit2 = console.nextInt();
+
+            System.out.print("Enter operation (add, sub, mul, div): ");
+            String operation = console.next();
+
+            int convertedDigit1 = Integer.parseInt(digit1);
+            System.out.println(calc.processStatement(convertedDigit1, digit2, operation));
+        }
+
     }
 
     public void ex7() {
