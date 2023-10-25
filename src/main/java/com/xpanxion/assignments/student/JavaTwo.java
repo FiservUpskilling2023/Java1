@@ -4,6 +4,7 @@ import com.xpanxion.assignments.shared.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.HashMap;
+import java.text.NumberFormat;
 
 public class JavaTwo {
 
@@ -64,8 +65,16 @@ public class JavaTwo {
         }
     }
 
+    // Invoice and Products
     public void ex3() {
-        System.out.println("Student 1: ex3.");
+        var invoice = new Invoice(1);
+        invoice.addProduct(new Product(111, "Mustard", 2.00));
+        invoice.addProduct(new Product(222, "Ketchup", 3.00));
+        invoice.addProduct(new Product(333, "Franks Hot Sauce", 4.00));
+
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        System.out.println("Total cost: " + formatter.format(invoice.getTotalCost()));
+
     }
 
     public void ex4() {
