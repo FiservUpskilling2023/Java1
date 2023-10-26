@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -169,7 +170,32 @@ public class JavaTwo {
     }
 
     public void ex10() {
-        System.out.println("Student 1: ex10.");
+        Cat cat1 = new Cat("Alice");
+        Cat cat2 = new Cat("Bob");
+        Cat cat3 = new Cat("Charlie");
+        Cat cat4 = new Cat("Dan");
+
+        Node node1 = new Node(cat1);
+
+        Node node2 = new Node(cat2);
+        Node node3 = new Node(cat3);
+        Node node4 = new Node(cat4);
+
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = node4;
+
+        Queue queue = new Queue();
+        queue.enqueue(node1);
+        queue.enqueue(node2);
+        queue.enqueue(node3);
+        queue.enqueue(node4);
+
+        while (!queue.isEmpty()) {
+            System.out.println(queue);
+            queue.dequeue();
+        }
+
     }
 
     //
