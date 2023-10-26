@@ -2,8 +2,12 @@ package com.xpanxion.assignments.student;
 
 import com.xpanxion.assignments.shared.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.text.NumberFormat;
 
 public class JavaTwo {
@@ -115,15 +119,38 @@ public class JavaTwo {
             int convertedDigit1 = Integer.parseInt(digit1);
             System.out.println(calc.processStatement(convertedDigit1, digit2, operation));
         }
-
     }
 
+    // Redact Last Name
     public void ex7() {
-        System.out.println("Student 1: ex7.");
+        var personList = Arrays.asList(
+                new Person(1, "Peter", "Jones"),
+                new Person(2, "John", "Smith"),
+                new Person(3, "Sue", "Anderson"));
+
+        // stream the list so that last name is "xxx", use getters/setters?
+        List<Person> newPersonList = personList.stream()
+                .peek(p -> p.setLastName("xxx"))
+                .collect(Collectors.toList());
+
+        for (Person p : newPersonList) {
+            System.out.println(p);
+        }
     }
 
+    // sort persons by first name
     public void ex8() {
-        System.out.println("Student 1: ex8.");
+        var personList = Arrays.asList(
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson"));
+
+        // sortimg with Comparator
+        personList.sort(Comparator.comparing(p -> p.getFirstName()));
+
+        for (Person p : personList) {
+            System.out.println(p);
+        }
     }
 
     public void ex9() {
